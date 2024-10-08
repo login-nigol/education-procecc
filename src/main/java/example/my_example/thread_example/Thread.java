@@ -1,4 +1,4 @@
-package example.my_example;
+package example.my_example.thread_example;
 
 public class Thread {
     public static void main(String[] args) {
