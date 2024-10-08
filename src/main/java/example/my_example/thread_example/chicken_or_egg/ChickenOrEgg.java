@@ -19,7 +19,7 @@ public class ChickenOrEgg {
             chicken.join();
             egg.join();
 
-//            System.out.println();
+            System.out.println();
         }
     }
 }
