@@ -1,4 +1,4 @@
-package example.my_example.daemon_thread_example;
+package example.my_example.thread_example.multi_threading;
 
 import java.time.LocalDateTime;
 
@@ -22,20 +22,18 @@ public class DaemonThreadExample {
 
         Thread thread3 = new Thread(new Runnable() {
             int counter = 0;
-
             @Override
             public void run() {
                 while (true) {
                     try {
-                        System.out.println(Thread.currentThread().getName() + " counter = " + counter++ + ", time: "
-                                + LocalDateTime.now());
+                        System.out.println(Thread.currentThread().getName() + " counter = "+  counter++ + ", time: " + LocalDateTime.now());
                         Thread.sleep(2000);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
                 }
             }
-        });
+        }, "MyDaemonThread");
         thread3.setDaemon(true);
         thread3.start();
 
@@ -43,7 +41,7 @@ public class DaemonThreadExample {
             thread1.join();
             thread2.join();
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 
