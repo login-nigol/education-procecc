@@ -1,4 +1,4 @@
-package example.my_example.thread_example.semaphore_tread.cyclic;
+package example.my_example.thread_example.co_cy_se_tread.cyclic;
 
 import java.util.concurrent.CyclicBarrier;
 

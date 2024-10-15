@@ -1,4 +1,4 @@
-package example.my_example.thread_example.semaphore_tread.semaphore;
+package example.my_example.thread_example.co_cy_se_tread.semaphore;
 
 import java.util.concurrent.Semaphore;
 

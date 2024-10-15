@@ -1,4 +1,4 @@
-package example.my_example.thread_example.semaphore_tread.count_down_latch;
+package example.my_example.thread_example.co_cy_se_tread.count_down_latch;
 
 import java.util.concurrent.CountDownLatch;
 
