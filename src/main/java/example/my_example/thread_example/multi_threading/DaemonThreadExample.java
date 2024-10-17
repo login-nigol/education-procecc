@@ -22,11 +22,13 @@ public class DaemonThreadExample {
 
         Thread thread3 = new Thread(new Runnable() {
             int counter = 0;
+
             @Override
             public void run() {
                 while (true) {
                     try {
-                        System.out.println(Thread.currentThread().getName() + " counter = "+  counter++ + ", time: " + LocalDateTime.now());
+                        System.out.println(Thread.currentThread().getName() + " counter = " + counter++ + ", " +
+                                "time: " + LocalDateTime.now());
                         Thread.sleep(2000);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
