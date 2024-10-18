@@ -1,4 +1,4 @@
-package example.logicgames.SnakeFill;
+package example.logic_games.SnakeFill;
 
 public class SnakeFillV2 {
 

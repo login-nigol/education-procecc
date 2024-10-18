@@ -1,6 +1,9 @@
-package example.logicgames.SnakeFill;
+package example.logic_games.SnakeFill;
 
-public class SnakeFillSumVariants {
+import java.util.ArrayList;
+import java.util.List;
+
+public class SnakeFillVariants {
 
     public static void main(String[] args) {
 //        Scanner scanner = new Scanner(System.in);
@@ -17,9 +20,10 @@ public class SnakeFillSumVariants {
         // Сценарии для каждого из направлений (вниз-вправо, вниз-влево, вверх-вправо, вверх-влево)
         int[][] directions = {{1, 1}, {1, -1}, {-1, 1}, {-1, -1}};
 
-        int fullFillCount = 0;
-        int cornerCount = 0;
-        int startPointCount = 0;
+        // Списки для хранения координат начальных точек
+        List<String> fullFillCoords = new ArrayList<>();
+        List<String> cornerCoords = new ArrayList<>();
+        List<String> startPointCoords = new ArrayList<>();
 
         for (int startX = 0; startX < rows; startX++) {
             for (int startY = 0; startY < cols; startY++) {
@@ -66,18 +70,18 @@ public class SnakeFillSumVariants {
                             if (!isFull) break;
                         }
                         if (isFull) {
-                            fullFillCount++;
+                            fullFillCoords.add("(" + startX + ", " + startY + ")");
                             break;
                         }
 
                         // Проверка на угол или возврат в начальную точку
                         if ((newX == startX && newY == startY)) {
-                            startPointCount++;
+                            startPointCoords.add("(" + startX + ", " + startY + ")");
                             break;
                         }
                         if ((newX == 0 && newY == 0) || (newX == rows - 1 && newY == 0) ||
                                 (newX == 0 && newY == cols - 1) || (newX == rows - 1 && newY == cols - 1)) {
-                            cornerCount++;
+                            cornerCoords.add("(" + startX + ", " + startY + ")");
                             break;
                         }
 
@@ -89,8 +93,8 @@ public class SnakeFillSumVariants {
             }
         }
 
-        System.out.println("Количество начальных точек для полного заполнения массива: " + fullFillCount);
-        System.out.println("Количество начальных точек для попадания в угол: " + cornerCount);
-        System.out.println("Количество начальных точек для возврата в начальную точку: " + startPointCount);
+        System.out.println("Координаты начальных точек для полного заполнения массива: " + fullFillCoords);
+        System.out.println("Координаты начальных точек для попадания в угол: " + cornerCoords);
+        System.out.println("Координаты начальных точек для возврата в начальную точку: " + startPointCoords);
     }
 }

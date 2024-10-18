@@ -1,6 +1,4 @@
-package example.logicgames.SnakeFill;
-
-import java.util.Scanner;
+package example.logic_games.SnakeFill;
 
 public class SnakeFill {
 
