@@ -1,4 +1,4 @@
-package example.logicgames;
+package example.logic_games;
 
 public class Handshakes { // сколько раз поздароваются
 

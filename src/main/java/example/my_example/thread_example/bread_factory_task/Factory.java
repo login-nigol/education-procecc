@@ -1,4 +1,4 @@
-package example.my_example.thread_example.task_bread_factory;
+package example.my_example.thread_example.bread_factory_task;
 
 import java.util.concurrent.Semaphore;
 

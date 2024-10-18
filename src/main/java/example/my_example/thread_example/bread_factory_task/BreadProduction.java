@@ -1,12 +1,12 @@
-package example.my_example.thread_example.task_bread_factory;
+package example.my_example.thread_example.bread_factory_task;
 
 import java.util.concurrent.Semaphore;
 
 public class BreadProduction {
 
     // Счётчик циклов (для ограничения до 3)
-//        public static int MAX_CYCLES = 3;
 //        public static int cycleCount = 0;
+//        public static int MAX_CYCLES = 3;
 
     public static void main(String[] args) {
 
@@ -25,5 +25,3 @@ public class BreadProduction {
         new Thread(new Store(storeSemaphore, factorySemaphore)).start();
     }
 }
-
-

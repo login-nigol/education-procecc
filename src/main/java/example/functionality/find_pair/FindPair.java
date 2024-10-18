@@ -1,4 +1,4 @@
-package example.functionality.findpair;
+package example.functionality.find_pair;
 
 public class FindPair {
 
