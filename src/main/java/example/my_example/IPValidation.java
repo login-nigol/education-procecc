@@ -1,4 +1,4 @@
-package example.programms;
+package example.my_example;
 
 public class IPValidation {
 

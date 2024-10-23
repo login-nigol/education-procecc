@@ -1,4 +1,4 @@
-package example.functionality.read_file;
+package example.functionality.read_write_file;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

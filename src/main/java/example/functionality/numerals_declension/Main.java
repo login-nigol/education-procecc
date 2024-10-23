@@ -1,6 +1,6 @@
-package example.my_example.numerals_declension;
+package example.functionality.numerals_declension;
 
-import static example.my_example.numerals_declension.NumeralsDeclension.getDeclension;
+import static example.functionality.numerals_declension.NumeralsDeclension.getDeclension;
 
 public class Main {
     public static void main(String[] args) {

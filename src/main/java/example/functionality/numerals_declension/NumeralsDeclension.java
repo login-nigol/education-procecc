@@ -1,4 +1,4 @@
-package example.my_example.numerals_declension;
+package example.functionality.numerals_declension;
 
 public class NumeralsDeclension {
 

@@ -1,4 +1,4 @@
-package example.programms;
+package example.functionality;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.client.methods.CloseableHttpResponse;
