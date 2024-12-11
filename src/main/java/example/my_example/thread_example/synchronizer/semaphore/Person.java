@@ -1,4 +1,4 @@
-package example.my_example.thread_example.co_cy_se_tread.semaphore;
+package example.my_example.thread_example.synchronizer.semaphore;
 
 import java.util.concurrent.Semaphore;
 
@@ -17,29 +17,30 @@ public class Person implements Runnable {
     @Override
     public void run() {
 
-        System.out.println(" -> " + name + " подошел в ресторан");
-        // Поток пойдёт за эту строчку или переведёт в состояние ожидания
+        System.out.println(" -> " + name + " пришел(а) в ресторан");
+        // поток пойдёт за эту строчку или переведёт в состояние ожидания
         try {
-            semaphore.acquire(); // 5, 4, 0 // if count == 0 then wait
+            semaphore.acquire(); // 5, 4, ->, 0 // if count == 0 then wait, запрос доступа
             int index = -1;
-            // Если счётчик семафора больше 0, то поток продолжает работать здесь
+            // если счётчик семафора больше 0, то поток продолжает работать здесь
             synchronized (freeTables) {
                 for (int i = 0; i < freeTables.length; i++) {
                     if (!freeTables[i]) {
                         freeTables[i] = true;
                         index = i;
-                        System.out.println("!!! " + name + " занят столик " + (i + 1));
+                        System.out.println("!!! " + name + " занял(а) столик " + (i + 1));
                         break;
                     }
                 }
             }
-            Thread.sleep(10000);
+            Thread.sleep(5000);
 
             synchronized (freeTables) {
                 freeTables[index] = false;
             }
-            System.out.println("<- " + name + " покинул ресторан");
             semaphore.release(); // count++; notifyAll();
+
+            System.out.println("<- " + name + " освободил(а) стол и покинул(а) ресторан");
 
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
